@@ -69,7 +69,7 @@ html:has(#toggle-dark-mode:checked) {
     color: orangered;
   }
 
-  .review-card{
+  .review-card {
     background-color: #f1f0f0;
     color: black;
     box-shadow: 0 0 4px 4px rgb(95, 95, 95);
@@ -83,6 +83,145 @@ html:has(#toggle-dark-mode:checked) {
   .review-form input:hover,
   .review-form textarea:hover {
     box-shadow: 0 0 7px 3px rgb(221, 220, 220);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar nav {
+    display: none;
+    justify-content: center;
+    text-align: center;
+    background: #181818;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+
+  #menu-toggle:checked + .hamburger + nav {
+    display: flex;
+  }
+
+  /* hero section */
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 5rem 1rem 2rem;
+  }
+
+  .hero .hero-left h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero .hero-left p {
+    font-size: 1.2rem;
+  }
+
+  .hero .hero-right {
+    margin-top: 2rem;
+  }
+
+  .hero .hero-right .svg-animation {
+    font-size: 3rem;
+  }
+
+  /* movie and show cards */
+
+  .card-container {
+    background-color: #f8e4bf;
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 2rem;
+    margin: 1.5rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
+
+  .card-content p {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .card-content h3 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .card:hover .card-overlay {
+    opacity: 1;
+  }
+
+  .watch-btn:hover,
+  .toggle-btn:hover {
+    background-color: rgb(198, 166, 108);
+    transform: scale(1.1);
+  }
+
+  .scroll-btn {
+    display: none;
+  }
+
+  /* review */
+
+  .review-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review-card {
+    max-width: 80%;
+    flex-direction: row;
+  }
+
+  .review-form form {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .review-card img {
+    max-width: 100px;
+    height: auto;
+  }
+
+  /* navbar */
+}
+
+@media (min-width: 769px) {
+  .hamburger,
+  .menu-toggle {
+    display: none;
   }
 }
 
@@ -158,30 +297,6 @@ body {
   padding: 8px;
 }
 
-@media (min-width: 425px) {
-  .hamburger,
-  .menu-toggle {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar nav {
-    display: none;
-    /* flex-direction: column; */
-    text-align: center;
-    justify-content: center;
-    background: #111;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-  }
-  #menu-toggle:checked + .hamburger + nav {
-    display: flex;
-  }
-}
-
 /* Hero section */
 .hero {
   display: flex;
@@ -242,30 +357,6 @@ body {
   }
   100% {
     transform: translateY(0);
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 5rem 1rem 2rem;
-  }
-
-  .hero .hero-left h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero .hero-left p {
-    font-size: 1.2rem;
-  }
-
-  .hero .hero-right {
-    margin-top: 2rem;
-  }
-
-  .hero .hero-right .svg-animation {
-    font-size: 3rem;
   }
 }
 
@@ -471,73 +562,6 @@ body {
   content: "✔";
 }
 
-@media (max-width: 768px) {
-  .card-container {
-    background-color: #f8e4bf;
-    display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-    padding: 2rem;
-    margin: 1.5rem;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .card {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-  }
-
-  .card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-  .card-content {
-    padding: 1rem;
-  }
-
-  .card-content p {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1rem;
-    text-align: left;
-  }
-
-  .card-content h3 {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .card-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    background: rgba(0, 0, 0, 0.6);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .card:hover .card-overlay {
-    opacity: 1;
-  }
-
-  .watch-btn:hover,
-  .toggle-btn:hover {
-    background-color: rgb(198, 166, 108);
-    transform: scale(1.1);
-  }
-
-  .scroll-btn {
-    display: none;
-  }
-}
-
 .card img[src*="show1.jpg"] {
   content: url("https://cdna.artstation.com/p/assets/images/images/046/103/336/large/illusion-design-money-heist-poster-min.jpg?1644314844");
 }
@@ -695,7 +719,7 @@ html:has(#toggle-dark-mode:checked) {
 
 .review-card {
   display: flex;
-  flex-direction: row; /* images side-by-side with text */
+  flex-direction: row;
   align-items: center;
   background-color: rgba(245, 244, 244, 0.6);
   width: 100%;
@@ -731,7 +755,7 @@ form {
   align-items: center;
   justify-content: center;
   width: 500px;
-  margin: 1rem;
+  /* margin: 1rem; */
   flex: 1;
 }
 
@@ -749,7 +773,7 @@ form {
   box-shadow: 0 0 5px rgb(141, 140, 140);
 }
 
-.review-form textarea{
+.review-form textarea {
   resize: none;
 }
 
@@ -768,7 +792,7 @@ form {
 }
 
 .review-form button {
-  width: 45%;
+  width: 50%;
   height: 40px;
   margin: 1rem;
   border-radius: 18px;
@@ -779,27 +803,6 @@ form {
 .review-form button:hover {
   background-color: #ff7300;
   transform: scale(1.05);
-}
-
-@media (max-width: 425px) {
-  .review-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  form {
-    width: 90%;
-  }
-
-  .review-card {
-    max-width: 90%;
-    flex-direction: row;
-  }
-
-  .review-card img {
-    width: 100px;
-    height: auto;
-  }
 }
 
 .footer {
@@ -837,7 +840,6 @@ form {
   color: #ff9800;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
-
 }
 
 .footer .socials {
@@ -851,7 +853,6 @@ form {
   background-color: #fdfdfd;
   border-radius: 50%;
   margin: 1rem;
-  /* border: 1px solid black; */
 }
 
 .footer .socials img:hover {
@@ -863,6 +864,7 @@ form {
   display: flex;
   justify-content: center;
   margin: 1rem;
+  text-align: center;
 }
 
 .footer .links a {
