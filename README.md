@@ -28,10 +28,10 @@
 ## 📸 Screenshots
 
 ### 🏠 Landing Page
-![Landing Page](./assets/screenshots/landing.png)
+![Landing Page](./assets/screenshots/landing.jpg)
 
 ### 🔥 Trending Shows
-![Trending Section](./assets/screenshots/trending.png)
+![Trending Section](./assets/screenshots/trending.jpg)
 
 ---
 
